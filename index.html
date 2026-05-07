@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>乡村旅游导览与客流分析平台</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <h1>乡村旅游导览与客流分析平台</h1>
+      <p>一站式查看景点信息、推荐线路与实时客流趋势。</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>景点导览</h2>
+      <div id="spot-grid" class="spot-grid"></div>
+    </section>
+
+    <section class="panel">
+      <h2>智能路线推荐</h2>
+      <label for="route-type">出游偏好</label>
+      <select id="route-type">
+        <option value="family">亲子休闲</option>
+        <option value="culture">人文体验</option>
+        <option value="food">美食打卡</option>
+      </select>
+      <button id="generate-route">生成路线</button>
+      <ol id="route-result" class="route-result"></ol>
+    </section>
+
+    <section class="panel">
+      <h2>客流分析</h2>
+      <div class="controls">
+        <label for="time-range">时间范围</label>
+        <select id="time-range">
+          <option value="today">今天</option>
+          <option value="week">近7天</option>
+          <option value="month">近30天</option>
+        </select>
+      </div>
+      <div class="kpi-row">
+        <article class="kpi">
+          <h3>当前在园人数</h3>
+          <p id="current-count">-</p>
+        </article>
+        <article class="kpi">
+          <h3>峰值时段</h3>
+          <p id="peak-hour">-</p>
+        </article>
+        <article class="kpi">
+          <h3>拥挤指数</h3>
+          <p id="crowd-index">-</p>
+        </article>
+      </div>
+      <canvas id="flow-chart" width="900" height="260" aria-label="客流趋势图"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <small>示例系统 · 可接入真实闸机 / Wi-Fi / 票务数据源</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
